@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 1f;
     public Vector2 movement;
     public Rigidbody2D rb;
+    public GameObject respawnPosition;
 
     public bool isSlipping = false;
 
@@ -29,5 +30,11 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
     }
+
+    public void Respawn()
+    {
+        rb.transform.position = respawnPosition.transform.position;
+    }
+
 
 }

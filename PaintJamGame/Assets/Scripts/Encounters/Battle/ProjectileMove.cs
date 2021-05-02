@@ -9,14 +9,57 @@ public class ProjectileMove : MonoBehaviour
 
     public float slope = 0f;
 
+    public string myDirection;
+
+    public BattleModeManager battleManager;
+
     private void OnEnable()
     {
-        slope = Random.Range(-.005f, .005f);
+        battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleModeManager>();
+        slope = Random.Range(-1f, 1f);
+        speed = Random.Range(1f, 4f);
+    }
+
+    private void OnDisable()
+    {
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(slope,  speed * Time.deltaTime, 0);
+
+        if(battleManager.battleStart == false)
+        {
+            gameObject.SetActive(false);
+        }
+
+        else
+        {
+            gameObject.SetActive(true);
+        }
+
+
+
+        if (myDirection == "Up")
+        {
+            transform.Translate(slope * Time.deltaTime, speed * Time.deltaTime, 0);
+        }
+
+        if (myDirection == "Right")
+        {
+            transform.Translate(speed * Time.deltaTime, slope * Time.deltaTime, 0);
+        }
+
+        if (myDirection == "Down")
+        {
+            transform.Translate(slope * Time.deltaTime, -speed * Time.deltaTime, 0);
+        }
+
+        if (myDirection == "Left")
+        {
+            transform.Translate(-speed * Time.deltaTime, slope * Time.deltaTime, 0);
+        }
+
     }
 }

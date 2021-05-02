@@ -7,9 +7,10 @@ public class ProjectileSpawners : MonoBehaviour
 
     public GameObject projectile;
 
-    float fireRate = 5f;
+    float fireRate = 2f;
     float currentTime;
     float nextShot;
+    public string projectileDirection;
 
 
     void OnDrawGizmos()
@@ -30,9 +31,10 @@ public class ProjectileSpawners : MonoBehaviour
        
         if(Time.time >= nextShot)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 var newProjectile = Instantiate(projectile, transform.position + transform.forward * 1, transform.rotation);
+                newProjectile.GetComponent<ProjectileMove>().myDirection = projectileDirection;
                 nextShot = Time.time + fireRate;
             }
         }

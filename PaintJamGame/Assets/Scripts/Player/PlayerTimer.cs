@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class PlayerTimer : MonoBehaviour
 {
-    public float LevelTime = 120;
+    public float LevelTime = 30;
     public float TimeRemaining;
+
+    public bool startTime = false;
 
     void Start()
     {
         TimeRemaining = LevelTime;
     }
 
+    private void OnEnable()
+    {
+        TimeRemaining = 30;
+    }
+
     void Update()
     {
-
-        TimeRemaining -= Time.deltaTime;
+        if (startTime)
+        {
+            TimeRemaining -= Time.deltaTime;
+        }
 
     }
 

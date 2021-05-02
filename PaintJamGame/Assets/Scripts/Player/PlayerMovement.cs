@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (!canMove) return;
 
+        if(Input.GetKeyDown(KeyCode.F)){ Respawn(); }
+
         if (slippingCount <= 0)
         {
             movement.x = Input.GetAxisRaw("Horizontal");

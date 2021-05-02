@@ -20,9 +20,14 @@ public class PlayerMovement : MonoBehaviour
     public int slippingCount = 0;
     public int stickyCount = 0;
 
+    public bool canMove = true;
+
 
     void Update()
     {
+
+        if (!canMove) return;
+
         if (slippingCount <= 0)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -73,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = standardMoveSpeed;
         if (stickyCount > 0) { moveSpeed = stickyMoveSpeed; }
 
-        if (slippingCount <= 0)
+        if (slippingCount <= 0 && canMove)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }

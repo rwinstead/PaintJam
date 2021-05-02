@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5785513347339025711}
   - component: {fileID: 8950977120058979665}
   - component: {fileID: 3887938470656774506}
+  - component: {fileID: -5112158304395923939}
   m_Layer: 0
   m_Name: GoalTile
   m_TagString: Untagged
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5112158304395923939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8025412777545600799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13d10c5e740ede4c9ba4549817c9642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleManager: {fileID: 0}

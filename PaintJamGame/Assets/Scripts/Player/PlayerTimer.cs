@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerTimer : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class PlayerTimer : MonoBehaviour
     public float TimeRemaining;
 
     public bool startTime = false;
+
+    public string nextLevel;
 
     void Start()
     {
@@ -24,6 +28,11 @@ public class PlayerTimer : MonoBehaviour
         if (startTime)
         {
             TimeRemaining -= Time.deltaTime;
+        }
+
+        if (TimeRemaining <= 0)
+        {
+            SceneManager.LoadScene(nextLevel, LoadSceneMode.Single);
         }
 
     }

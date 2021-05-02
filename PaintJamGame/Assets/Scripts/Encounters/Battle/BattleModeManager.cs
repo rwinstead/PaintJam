@@ -40,7 +40,7 @@ public class BattleModeManager : MonoBehaviour
             main.SetActive(false);
             battleCam.SetActive(true);
             projectileSpawners.SetActive(true);
-            player.SetActive(false);
+            player.GetComponent<PlayerMovement>().canMove = false;
             dieCanvas.SetActive(true);
             livesCanvas.SetActive(true);
             timeCanvas.SetActive(true);
@@ -53,7 +53,7 @@ public class BattleModeManager : MonoBehaviour
             main.SetActive(true);
             battleCam.SetActive(false);
             projectileSpawners.SetActive(false);
-            player.SetActive(true);
+            player.GetComponent<PlayerMovement>().canMove = true;
             dieCanvas.SetActive(false);
             livesCanvas.SetActive(false);
             timeCanvas.SetActive(false);

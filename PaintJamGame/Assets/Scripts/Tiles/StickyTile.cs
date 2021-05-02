@@ -11,6 +11,6 @@ public class StickyTile : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 5;
+        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 2.5f;
     }
 }

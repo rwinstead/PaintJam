@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject respawnPosition;
 
+    public Animator anim;
+
     public bool isSlipping = false;
 
 
@@ -20,6 +22,44 @@ public class PlayerMovement : MonoBehaviour
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
         }
+
+        if (Mathf.Abs(movement.x) + Mathf.Abs(movement.y) > 0)
+        {
+            anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            anim.SetBool("IsMoving", false);
+        }
+
+        if(movement.x > 0)
+        {
+            anim.SetBool("WalkingRight", true);
+        }
+        else
+        {
+            anim.SetBool("WalkingRight", false);
+        }
+
+        if (movement.x < 0)
+        {
+            anim.SetBool("WalkingLeft", true);
+        }
+        else
+        {
+            anim.SetBool("WalkingLeft", false);
+        }
+
+        if(isSlipping)
+        {
+            anim.SetBool("IsSliding", true);
+        }
+        else
+        {
+            anim.SetBool("IsSliding", false);
+        }
+
+
     }
 
     private void FixedUpdate()

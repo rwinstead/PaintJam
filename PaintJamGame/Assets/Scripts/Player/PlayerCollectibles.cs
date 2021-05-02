@@ -15,6 +15,7 @@ public class PlayerCollectibles : MonoBehaviour
             Debug.Log("Got Soup");
             keyCount++;
             Destroy(collision.gameObject);
+            FindObjectOfType<AudioManager>().Play("SoupPickup");
             Debug.Log("Soup Count: " + keyCount);
         }
     }

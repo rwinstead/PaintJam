@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.tag == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("Death");
             collision.gameObject.GetComponent<PlayerLives>().TakeDamage(1);
             collision.gameObject.GetComponent<PlayerMovement>().Respawn();
         }

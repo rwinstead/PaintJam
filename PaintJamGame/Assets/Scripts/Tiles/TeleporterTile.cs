@@ -14,6 +14,7 @@ public class TeleporterTile : MonoBehaviour
         if (!justTeleported)
         {
             collision.attachedRigidbody.position = pairedTeleporter.transform.position;
+            FindObjectOfType<AudioManager>().Play("Teleport");
         }
         justTeleported = true;
         pairedTeleporter.GetComponent<TeleporterTile>().justTeleported = true;

@@ -23,6 +23,7 @@ public class OneWayTile : MonoBehaviour
     {
         Debug.Log("oneway enter");
         BlockWayBack.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("OneWay");
     }
 
     private void OnTriggerExit2D(Collider2D collision)

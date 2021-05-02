@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SlipperyTile : MonoBehaviour
 {
@@ -15,11 +16,17 @@ public class SlipperyTile : MonoBehaviour
 
     public float slipSpeed = 2f;
 
+    public float sfx_cooldown = 2f;
+    public float sfx_time_triggered = 0;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     { 
         slipMovement = collision.gameObject.GetComponentInParent<PlayerMovement>().movement;
         playerMovement = collision.gameObject.GetComponentInParent<PlayerMovement>();
+        
+        FindObjectOfType<AudioManager>().Play("Slipping");
+        
         playerMovement.slippingCount += 1;
         playerRB = collision.attachedRigidbody;
         isSlipping = true;

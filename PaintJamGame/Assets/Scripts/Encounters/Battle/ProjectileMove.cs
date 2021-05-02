@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileMove : MonoBehaviour
 {
 
-    public float speed = 2f;
+    public float speed;
 
     public float slope = 0f;
 
@@ -13,11 +13,13 @@ public class ProjectileMove : MonoBehaviour
 
     public BattleModeManager battleManager;
 
+    public float maxSpeed;
+
     private void OnEnable()
     {
         battleManager = GameObject.FindGameObjectWithTag("BattleManager").GetComponent<BattleModeManager>();
-        slope = Random.Range(-1f, 1f);
-        speed = Random.Range(1f, 4f);
+        slope = Random.Range(-.5f, .5f);
+        speed = Random.Range(3f, maxSpeed);
     }
 
     private void OnDisable()

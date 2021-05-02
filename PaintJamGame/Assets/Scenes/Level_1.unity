@@ -2248,6 +2248,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 293309832439515728, guid: a0410c8035cb7324fa3f42f52acdc86d, type: 3}
+      propertyPath: bananaSpeedMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 293309832439515728, guid: a0410c8035cb7324fa3f42f52acdc86d, type: 3}
+      propertyPath: projectileCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 293309832448316672, guid: a0410c8035cb7324fa3f42f52acdc86d, type: 3}
+      propertyPath: bananaSpeedMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 293309832448316672, guid: a0410c8035cb7324fa3f42f52acdc86d, type: 3}
+      propertyPath: projectileCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 293309832634814089, guid: a0410c8035cb7324fa3f42f52acdc86d, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -12,6 +12,10 @@ public class ProjectileSpawners : MonoBehaviour
     float nextShot;
     public string projectileDirection;
 
+    public int projectileCount = 3;
+
+    public float bananaSpeedMax = 2f;
+
 
     void OnDrawGizmos()
     {
@@ -31,10 +35,11 @@ public class ProjectileSpawners : MonoBehaviour
        
         if(Time.time >= nextShot)
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < projectileCount; i++)
             {
                 var newProjectile = Instantiate(projectile, transform.position + transform.forward * 1, transform.rotation);
                 newProjectile.GetComponent<ProjectileMove>().myDirection = projectileDirection;
+                newProjectile.GetComponent<ProjectileMove>().maxSpeed = bananaSpeedMax;
                 nextShot = Time.time + fireRate;
             }
         }

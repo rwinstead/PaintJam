@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2554095832302298494, guid: 3c964785b97be1c47a9a08ccccb15249, type: 3}
   projectileDirection: Left
+  projectileCount: 3
+  bananaSpeedMax: 2
 --- !u!1 &293309832448316686
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +92,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2554095832302298494, guid: 3c964785b97be1c47a9a08ccccb15249, type: 3}
   projectileDirection: Up
+  projectileCount: 3
+  bananaSpeedMax: 2
 --- !u!1 &293309832493396517
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,8 +123,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293309832493396517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.31, y: 1.361, z: 0}
-  m_LocalScale: {x: 0.45712152, y: 0.45712152, z: 0.45712152}
+  m_LocalPosition: {x: 5.16, y: 1.49, z: 0}
+  m_LocalScale: {x: 0.6353989, y: 0.6353989, z: 0.6353989}
   m_Children: []
   m_Father: {fileID: 293309833776541116}
   m_RootOrder: 4
@@ -806,6 +810,7 @@ MonoBehaviour:
   LevelTime: 30
   TimeRemaining: 0
   startTime: 0
+  nextLevel: 
 --- !u!114 &293309833468505931
 MonoBehaviour:
   m_ObjectHideFlags: 0

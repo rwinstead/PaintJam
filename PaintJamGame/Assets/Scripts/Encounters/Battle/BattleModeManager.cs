@@ -63,7 +63,7 @@ public class BattleModeManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            battleStart = !battleStart;
+           // battleStart = !battleStart;
         }
 
     }

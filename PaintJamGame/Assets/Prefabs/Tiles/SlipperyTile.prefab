@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6808447580513277569}
   - component: {fileID: 6808447580513277571}
   - component: {fileID: 6808447580513277570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SlipperyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8399819060955918409}
   - component: {fileID: 6482965210162402083}
   - component: {fileID: 964236573753004125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StickyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

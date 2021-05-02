@@ -15,13 +15,15 @@ public class SlipperyTile : MonoBehaviour
 
     public float slipSpeed = 2f;
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        slipMovement = collision.gameObject.GetComponent<PlayerMovement>().movement;
-        playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
-        playerMovement.isSlipping = true;
+        slipMovement = collision.gameObject.GetComponentInParent<PlayerMovement>().movement;
+        playerMovement = collision.gameObject.GetComponentInParent<PlayerMovement>();
+        playerMovement.slippingCount += 1;
         playerRB = collision.attachedRigidbody;
         isSlipping = true;
+        Debug.Log("Slipping: "+playerMovement.slippingCount);
     }
 
     private void FixedUpdate()
@@ -35,7 +37,8 @@ public class SlipperyTile : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         isSlipping = false;
-        playerMovement.isSlipping = false;
+        playerMovement.slippingCount -= 1;
+        Debug.Log("Slipping: " + playerMovement.slippingCount);
     }
 
 }

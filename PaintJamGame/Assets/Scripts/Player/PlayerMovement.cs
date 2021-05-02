@@ -14,10 +14,16 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isSlipping = false;
 
+    public float standardMoveSpeed=3f;
+    public float stickyMoveSpeed=1f;
+
+    public int slippingCount = 0;
+    public int stickyCount = 0;
+
 
     void Update()
     {
-        if (!isSlipping)
+        if (slippingCount <= 0)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -50,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("WalkingLeft", false);
         }
 
-        if(isSlipping)
+        if (slippingCount > 0)
         {
             anim.SetBool("IsSliding", true);
         }
@@ -64,8 +70,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        moveSpeed = standardMoveSpeed;
+        if (stickyCount > 0) { moveSpeed = stickyMoveSpeed; }
 
-        if (!isSlipping)
+        if (slippingCount <= 0)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }

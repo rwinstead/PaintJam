@@ -6,11 +6,14 @@ public class StickyTile : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 1;
+        collision.gameObject.GetComponentInParent<PlayerMovement>().stickyCount += 1;
+        Debug.Log("Sticky: " + collision.gameObject.GetComponentInParent<PlayerMovement>().stickyCount);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<PlayerMovement>().moveSpeed = 2.5f;
+
+        collision.gameObject.GetComponentInParent<PlayerMovement>().stickyCount -= 1;
+        Debug.Log("Sticky: " + collision.gameObject.GetComponentInParent<PlayerMovement>().stickyCount);
     }
 }

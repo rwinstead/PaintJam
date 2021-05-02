@@ -15,6 +15,6 @@ public class SoupUI_update : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponentInParent<TextMeshProUGUI>().text = Player.GetComponent<PlayerCollectibles>().keyCount.ToString();
+        GetComponentInParent<TextMeshProUGUI>().text = Player.GetComponent<PlayerCollectibles>().keyCount.ToString() + " / 4";
     }
 }

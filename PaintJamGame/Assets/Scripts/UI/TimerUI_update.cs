@@ -6,6 +6,8 @@ using System;
 
 public class TimerUI_update : MonoBehaviour
 {
+    int seconds;
+
     public GameObject Player;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +18,7 @@ public class TimerUI_update : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        GetComponentInParent<TextMeshProUGUI>().text = Player.GetComponent<PlayerTimer>().TimeRemaining.ToString();
+        seconds = Mathf.RoundToInt(Player.GetComponent<PlayerTimer>().TimeRemaining);
+        GetComponentInParent<TextMeshProUGUI>().text = seconds.ToString();
     }
 }

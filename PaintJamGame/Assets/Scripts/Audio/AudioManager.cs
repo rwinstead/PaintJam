@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 	public static AudioManager instance;
 
 	public AudioMixerGroup mixerGroup;
+	
+	public float VolumeModifier = 1f;
 
 	public Sound[] sounds;
 
@@ -42,7 +44,7 @@ public class AudioManager : MonoBehaviour
 			return;
 		}
 
-		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
+		s.source.volume = s.volume * VolumeModifier * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
 
 		if ((Time.time - s.timeLastPlayed) > s.cooldown)

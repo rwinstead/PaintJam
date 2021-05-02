@@ -14,6 +14,7 @@ public class BattleDmgDetect : MonoBehaviour
         {
             anim.SetTrigger("TookDmg");
             playerLives.TakeDamage(1);
+            FindObjectOfType<AudioManager>().Play("Oof");
             Destroy(collision.gameObject);
         }
     }

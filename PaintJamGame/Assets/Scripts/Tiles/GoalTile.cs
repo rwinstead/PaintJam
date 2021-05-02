@@ -21,6 +21,7 @@ public class GoalTile : MonoBehaviour
             if(collision.gameObject.GetComponent<PlayerCollectibles>().keyCount == 4 && !inGoal)
             {
                 inGoal = true;
+                FindObjectOfType<AudioManager>().Play("BossTeleport");
                 battleManager.battleStart = true;
             }
         }

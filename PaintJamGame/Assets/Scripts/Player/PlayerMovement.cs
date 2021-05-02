@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove = true;
 
-
     void Update()
     {
 
